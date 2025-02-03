@@ -1,6 +1,6 @@
 {
   "name": "@phaier/with-label-action",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "GitHub Actions to check whether a pull request has the label.",
   "main": "index.js",
   "scripts": {
