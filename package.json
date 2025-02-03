@@ -1,0 +1,36 @@
+{
+  "name": "@phaier/with-label-action",
+  "version": "0.0.1",
+  "description": "GitHub Actions to check whether a pull request has the label.",
+  "main": "index.js",
+  "scripts": {
+    "build": "ncc build -o dist --minify --source-map --no-source-map-register src/main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phaier/with-label-action.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phaier/with-label-action/issues"
+  },
+  "homepage": "https://github.com/phaier/with-label-action#readme",
+  "volta": {
+    "node": "20.18.2"
+  },
+  "dependencies": {
+    "@actions/core": "^1.11.1",
+    "@actions/github": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.7.9",
+    "@vercel/ncc": "^0.38.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "5.7.3"
+  }
+}
