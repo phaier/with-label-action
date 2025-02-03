@@ -3,11 +3,7 @@ import { getInput, setFailed, setOutput, info } from '@actions/core';
 
 (async () => {
   try {
-    const token = process.env.GITHUB_TOKEN;
-    if (!token) {
-      throw new Error('GITHUB_TOKEN が設定されていません');
-    }
-
+    const token = getInput('github-token');
     const targetLabel = getInput('target-label');
 
     const commitSha = context.sha;

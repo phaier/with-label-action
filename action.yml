@@ -1,6 +1,9 @@
 name: '@phaier/with-label-action'
 description: 'GitHub Actions to check whether a pull request has the label.'
 inputs:
+  github-token:
+    description: 'GitHub Token'
+    required: true
   target-label:
     description: 'チェック対象のラベル名'
     required: true
