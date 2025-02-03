@@ -1,0 +1,27 @@
+name: test
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  check_label:
+    runs-on: ubuntu-latest
+    outputs:
+      pr_has_label: ${{ steps.check.outputs.pr_has_label }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check PR Label
+        id: check
+        uses: phaier/with-label-action
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          target-label: 'CI Test'
+
+  process:
+    needs: check_label
+    runs-on: ubuntu-latest
+    if: needs.check_label.outputs.pr_has_label == 'true'
+    steps:
+      - name: 対象 PR の処理を実行
+        run: echo "対象の PR に 'CI Test' が付与されているため、処理を実行します。"
